@@ -36,7 +36,7 @@ public class ClasseController {
     }
 
     @PostMapping("/novo")
-    public Classe criarClasse(@RequestBody Classe body, @PathVariable UUID id) throws RelationNotFoundException {
+    public Classe criarClasse(@RequestBody Classe body) throws RelationNotFoundException {
         return service.saveAll(body);
     }
 

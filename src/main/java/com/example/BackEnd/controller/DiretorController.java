@@ -36,7 +36,7 @@ public class DiretorController {
     }
 
     @PostMapping("/novo")
-    public Diretor criarDiretor(@RequestBody Diretor body, @PathVariable UUID id) throws RelationNotFoundException {
+    public Diretor criarDiretor(@RequestBody Diretor body) throws RelationNotFoundException {
         return service.saveAll(body);
     }
 
