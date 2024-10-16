@@ -30,22 +30,22 @@ public class ClasseController {
         return service.listAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/listar/{id}")
     public Classe listarClasseId(@PathVariable UUID id) throws RelationNotFoundException {
         return service.listId(id);
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/novo")
     public Classe criarClasse(@RequestBody Classe body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.saveAll(body);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/editar/{id}")
     public Classe editarClasse(@RequestBody Classe body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.editId(body, id);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar/{id}")
     public void deletarClasse(@PathVariable UUID id) throws RelationNotFoundException {
         service.deleteId(id);
     }

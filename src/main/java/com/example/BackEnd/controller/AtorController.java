@@ -30,22 +30,22 @@ public class AtorController {
         return service.listAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/listar/{id}")
     public Ator listarAtorId(@PathVariable UUID id) throws RelationNotFoundException {
         return service.listId(id);
     }
 
-    @PostMapping("/{id}")
-    public Ator criarAtor(@RequestBody Ator body, @PathVariable UUID id) throws RelationNotFoundException {
+    @PostMapping("/novo")
+    public Ator criarAtor(@RequestBody Ator body) throws RelationNotFoundException {
         return service.saveAll(body);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/editar/{id}")
     public Ator editarAtor(@RequestBody Ator body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.editId(body, id);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar/{id}")
     public void deletarAtor(@PathVariable UUID id) throws RelationNotFoundException {
         service.deleteId(id);
     }

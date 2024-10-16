@@ -30,22 +30,22 @@ public class DiretorController {
         return service.listAll();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/listar/{id}")
     public Diretor listarDiretorId(@PathVariable UUID id) throws RelationNotFoundException {
         return service.listId(id);
     }
 
-    @PostMapping("/{id}")
+    @PostMapping("/novo")
     public Diretor criarDiretor(@RequestBody Diretor body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.saveAll(body);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/editar/{id}")
     public Diretor editarDiretor(@RequestBody Diretor body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.editId(body, id);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/deletar/{id}")
     public void deletarDiretor(@PathVariable UUID id) throws RelationNotFoundException {
         service.deleteId(id);
     }
