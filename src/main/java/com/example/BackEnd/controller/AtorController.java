@@ -40,13 +40,14 @@ public class AtorController {
         return service.saveAll(body);
     }
 
-    @PutMapping("/editar/{id}")
+    @PutMapping("/{id}")
     public Ator editarAtor(@RequestBody Ator body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.editId(body, id);
     }
 
-    @DeleteMapping("/deletar/{id}")
+    @DeleteMapping("/{id}")
     public void deletarAtor(@PathVariable UUID id) throws RelationNotFoundException {
+        System.out.println(id);
         service.deleteId(id);
     }
 

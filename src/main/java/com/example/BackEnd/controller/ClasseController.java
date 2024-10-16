@@ -40,12 +40,12 @@ public class ClasseController {
         return service.saveAll(body);
     }
 
-    @PutMapping("/editar/{id}")
+    @PutMapping("/{id}")
     public Classe editarClasse(@RequestBody Classe body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.editId(body, id);
     }
 
-    @DeleteMapping("/deletar/{id}")
+    @DeleteMapping("/{id}")
     public void deletarClasse(@PathVariable UUID id) throws RelationNotFoundException {
         service.deleteId(id);
     }
