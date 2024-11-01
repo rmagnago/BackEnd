@@ -1,11 +1,13 @@
 package com.example.BackEnd.model;
 
+import java.util.ArrayList;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,5 +23,6 @@ public class Ator {
 
     private String nome;
 
-    
+    @ManyToMany
+    private ArrayList<Titulo> titulos;
 }

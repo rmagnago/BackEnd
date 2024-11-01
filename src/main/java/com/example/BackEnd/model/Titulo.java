@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -28,4 +30,13 @@ public class Titulo {
     private String sinopse;
 
     private String categoria;
+
+    @ManyToMany
+    private Ator ator;
+
+    @ManyToOne
+    private Classe classe;
+
+    @ManyToOne
+    private Diretor diretor;
 }
