@@ -1,6 +1,7 @@
 package com.example.BackEnd.model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
@@ -32,7 +33,7 @@ public class Titulo {
     private String categoria;
 
     @ManyToMany
-    private Ator ator;
+    private List<Ator> ator;
 
     @ManyToOne
     private Classe classe;

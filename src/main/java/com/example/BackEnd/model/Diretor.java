@@ -1,6 +1,6 @@
 package com.example.BackEnd.model;
 
-import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 import jakarta.persistence.Entity;
@@ -25,5 +25,5 @@ public class Diretor {
     private String nome;
 
     @OneToMany
-    private ArrayList<Titulo> titulos;
+    private List<Titulo> titulos;
 }
