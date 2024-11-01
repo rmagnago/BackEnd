@@ -30,8 +30,9 @@ public class TituloService {
     }
 
     public void delete(UUID id) throws RelationNotFoundException {
-        Titulo deeltado = listById(id);
-        repository.delete(deeltado);
+        Titulo delatada = repository.findById(id)
+                .orElseThrow(() -> new RelationNotFoundException("Não existe titulo com id: '" + id + "'"));
+        repository.delete(delatada);
     }
 
     public Titulo editId(Titulo titulo, UUID id) throws RelationNotFoundException {
