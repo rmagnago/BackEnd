@@ -19,7 +19,7 @@ import com.example.BackEnd.model.Titulo;
 import com.example.BackEnd.service.TituloService;
 
 @RestController
-@RequestMapping("/api/Titulo")
+@RequestMapping("/api/titulo")
 public class TituloController {
 
     @Autowired
