@@ -5,10 +5,11 @@ import java.util.List;
 import javax.management.relation.RelationNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.BackEnd.model.Item;
 import com.example.BackEnd.repository.ItemRepository;
-
+@Service
 public class ItemService {
 
     @Autowired
