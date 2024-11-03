@@ -6,10 +6,12 @@ import java.util.UUID;
 import javax.management.relation.RelationNotFoundException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.example.BackEnd.model.Titulo;
 import com.example.BackEnd.repository.TituloRepository;
 
+@Service
 public class TituloService {
 
     @Autowired
