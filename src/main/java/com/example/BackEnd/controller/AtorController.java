@@ -30,7 +30,7 @@ public class AtorController {
         return service.listAll();
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/{id}")
     public Ator listarAtorId(@PathVariable UUID id) throws RelationNotFoundException {
         return service.listId(id);
     }
