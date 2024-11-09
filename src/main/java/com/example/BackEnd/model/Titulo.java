@@ -8,6 +8,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
@@ -33,6 +35,11 @@ public class Titulo {
     private String categoria;
 
     @ManyToMany
+    @JoinTable(
+        name = "titulo_ator",
+        joinColumns = @JoinColumn(name = "titulo_id"),
+        inverseJoinColumns = @JoinColumn(name = "ator_id")
+    )
     private List<Ator> ator;
 
     @ManyToOne

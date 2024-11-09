@@ -30,7 +30,7 @@ public class DiretorController {
         return service.listAll();
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/{id}")
     public Diretor listarDiretorId(@PathVariable UUID id) throws RelationNotFoundException {
         return service.listId(id);
     }

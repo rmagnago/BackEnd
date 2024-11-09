@@ -30,7 +30,7 @@ public class ClasseController {
         return service.listAll();
     }
 
-    @GetMapping("/listar/{id}")
+    @GetMapping("/{id}")
     public Classe listarClasseId(@PathVariable UUID id) throws RelationNotFoundException {
         return service.listId(id);
     }
