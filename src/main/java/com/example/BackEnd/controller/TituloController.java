@@ -35,8 +35,8 @@ public class TituloController {
         return service.listById(id);
     }
 
-    @PostMapping("/{id}")
-    public Titulo criarTitulo(@RequestBody Titulo body, @PathVariable UUID id) throws RelationNotFoundException {
+    @PostMapping("/novo")
+    public Titulo criarTitulo(@RequestBody Titulo body) throws RelationNotFoundException {
         return service.saveAll(body);
     }
 

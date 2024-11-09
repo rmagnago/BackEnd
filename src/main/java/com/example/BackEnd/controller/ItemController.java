@@ -34,8 +34,8 @@ public class ItemController {
         return service.listById(id);
     }
 
-    @PostMapping("/{id}")
-    public Item criarItem(@RequestBody Item body, @PathVariable int id) throws RelationNotFoundException {
+    @PostMapping("/novo")
+    public Item criarItem(@RequestBody Item body) throws RelationNotFoundException {
         return service.saveAll(body);
     }
 

@@ -23,6 +23,6 @@ public class Ator {
 
     private String nome;
 
-    @ManyToMany
+    @ManyToMany(mappedBy = "ator")
     private List<Titulo> titulos;
 }
