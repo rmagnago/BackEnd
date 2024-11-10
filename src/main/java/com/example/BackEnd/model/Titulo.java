@@ -1,6 +1,5 @@
 package com.example.BackEnd.model;
 
-import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -28,7 +27,7 @@ public class Titulo {
 
     private String nome;
 
-    private Date ano;
+    private int ano;
 
     private String sinopse;
 
