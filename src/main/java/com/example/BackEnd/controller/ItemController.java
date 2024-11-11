@@ -1,6 +1,7 @@
 package com.example.BackEnd.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.management.relation.RelationNotFoundException;
 
@@ -34,7 +35,7 @@ public class ItemController {
 
     @Operation(summary = "Listar item por ID", description = "Retorna um item específico com base no seu ID.")
     @GetMapping("/{id}")
-    public Item listarItemId(@PathVariable int id) throws RelationNotFoundException {
+    public Item listarItemId(@PathVariable UUID id) throws RelationNotFoundException {
         return service.listById(id);
     }
 
@@ -46,13 +47,13 @@ public class ItemController {
 
     @Operation(summary = "Editar item existente", description = "Atualiza as informações de um item existente com base no ID.")
     @PutMapping("/{id}")
-    public Item editarItem(@RequestBody Item body, @PathVariable int id) throws RelationNotFoundException {
+    public Item editarItem(@RequestBody Item body, @PathVariable UUID id) throws RelationNotFoundException {
         return service.editId(body, id);
     }
 
     @Operation(summary = "Deletar item", description = "Remove um item do sistema com base no seu ID.")
     @DeleteMapping("/{id}")
-    public void deletarItem(@PathVariable int id) throws RelationNotFoundException {
+    public void deletarItem(@PathVariable UUID id) throws RelationNotFoundException {
         service.delete(id);
     }
 

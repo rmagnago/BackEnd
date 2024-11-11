@@ -1,6 +1,7 @@
 package com.example.BackEnd.service;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.management.relation.RelationNotFoundException;
 
@@ -24,18 +25,18 @@ public class ItemService {
         return repository.findAll();
     }
 
-    public Item listById(int id) throws RelationNotFoundException {
+    public Item listById(UUID id) throws RelationNotFoundException {
         return repository.findById(id)
                 .orElseThrow(() -> new RelationNotFoundException("Não existe item com número de série: '" + id + "'"));
     }
 
-    public void delete(int id) throws RelationNotFoundException {
+    public void delete(UUID id) throws RelationNotFoundException {
         Item delatada = repository.findById(id)
                 .orElseThrow(() -> new RelationNotFoundException("Não existe item com número de série: '" + id + "'"));
         repository.delete(delatada);
     }
 
-    public Item editId(Item item, int id) throws RelationNotFoundException {
+    public Item editId(Item item, UUID id) throws RelationNotFoundException {
         Item alterado = repository.findById(id)
                 .orElseThrow(() -> new RelationNotFoundException("Não existe item com número de série: '" + id + "'"));
 
