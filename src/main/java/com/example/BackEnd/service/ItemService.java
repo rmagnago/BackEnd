@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.BackEnd.model.Item;
 import com.example.BackEnd.repository.ItemRepository;
+
 @Service
 public class ItemService {
 
@@ -43,6 +44,7 @@ public class ItemService {
         alterado.setNumSerie(item.getNumSerie());
         alterado.setDtAquisicao(item.getDtAquisicao());
         alterado.setTipoItem(item.getTipoItem());
+        alterado.setTitulo(item.getTitulo());
 
         return repository.save(alterado);
     }
