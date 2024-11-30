@@ -25,6 +25,8 @@ public class Cliente {
 
     private Date dtNascimento;
 
+    private int numInscricao;
+
     private String sexo;
 
     private boolean ativo;
