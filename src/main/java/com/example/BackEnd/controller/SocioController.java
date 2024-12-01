@@ -23,7 +23,6 @@ import io.swagger.v3.oas.annotations.Operation;
 @RestController
 @RequestMapping("/api/socio")
 public class SocioController {
-
     @Autowired
     private SocioService service;
 
@@ -42,7 +41,7 @@ public class SocioController {
     @Operation(summary = "Criar novo Socio", description = "Cadastra um novo Socio no sistema.")
     @PostMapping("/novo")
     public Socio criarSocio(@RequestBody Socio body) throws RelationNotFoundException {
-        return service.saveAll(body);
+        return service.save(body);
     }
 
     @Operation(summary = "Editar Socio existente", description = "Atualiza as informações de um Socio existente com base no ID.")
@@ -56,5 +55,4 @@ public class SocioController {
     public void deletarSocio(@PathVariable UUID id) throws RelationNotFoundException {
         service.deleteId(id);
     }
-
 }

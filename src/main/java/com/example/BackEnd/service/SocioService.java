@@ -13,11 +13,10 @@ import com.example.BackEnd.repository.SocioRepository;
 
 @Service
 public class SocioService {
-
     @Autowired
     private SocioRepository repository;
 
-    public Socio saveAll(Socio socio) {
+    public Socio save(Socio socio) {
         repository.save(socio);
         return socio;
     }
@@ -32,10 +31,10 @@ public class SocioService {
     }
 
     public void deleteId(UUID id) throws RelationNotFoundException {
-        Socio delatada = repository.findById(id)
+        Socio deletado = repository.findById(id)
                 .orElseThrow(() -> new RelationNotFoundException("Não existe socio com ID: " + id));
 
-        repository.delete(delatada);
+        repository.delete(deletado);
     }
 
     public Socio editId(Socio socio, UUID id) throws RelationNotFoundException {
@@ -45,12 +44,11 @@ public class SocioService {
         alterado.setNome(socio.getNome());
         alterado.setDtNascimento(socio.getDtNascimento());
         alterado.setSexo(socio.getSexo());
-        alterado.setAtivo(socio.isAtivo());
+        alterado.setAtivo(socio.getAtivo());
         alterado.setCpf(socio.getCpf());
         alterado.setTelefone(socio.getTelefone());
         alterado.setEndereco(socio.getEndereco());
 
         return repository.save(alterado);
     }
-
 }
