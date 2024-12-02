@@ -45,7 +45,7 @@ public class ClienteService {
         alterado.setNome(cliente.getNome());
         alterado.setDtNascimento(cliente.getDtNascimento());
         alterado.setSexo(cliente.getSexo());
-        alterado.setAtivo(cliente.getAtivo());
+        alterado.setAtivo(cliente.isAtivo());
 
         return repository.save(alterado);
     }

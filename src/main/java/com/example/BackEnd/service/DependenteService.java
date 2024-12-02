@@ -45,8 +45,7 @@ public class DependenteService {
         alterado.setNome(dependente.getNome());
         alterado.setDtNascimento(dependente.getDtNascimento());
         alterado.setSexo(dependente.getSexo());
-        alterado.setAtivo(dependente.getAtivo());
-        alterado.setSocio(dependente.getSocio());
+        alterado.setAtivo(dependente.isAtivo());
 
         return repository.save(alterado);
     }

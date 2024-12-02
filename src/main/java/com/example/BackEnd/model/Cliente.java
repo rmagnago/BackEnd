@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,12 +28,13 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    private Integer numInscricao;
+    private int numInscricao;
     private String nome;
     private LocalDate dtNascimento;
     private String sexo;
-    private Boolean ativo;
+    private boolean ativo;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "cliente")
     private List<Locacao> locacao;
 }

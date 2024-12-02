@@ -44,7 +44,7 @@ public class SocioService {
         alterado.setNome(socio.getNome());
         alterado.setDtNascimento(socio.getDtNascimento());
         alterado.setSexo(socio.getSexo());
-        alterado.setAtivo(socio.getAtivo());
+        alterado.setAtivo(socio.isAtivo());
         alterado.setCpf(socio.getCpf());
         alterado.setTelefone(socio.getTelefone());
         alterado.setEndereco(socio.getEndereco());
